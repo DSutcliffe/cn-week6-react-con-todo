@@ -10,8 +10,9 @@ class App extends Component {
     currentItem: {text:"", key:""}
   }
 
+  // Called from toDoList.js onSubmit
   addItem = (e) => {
-    // Prevent Refresh...
+    // Prevent Refresh/Reload...
     e.preventDefault()
 
     const newItem = this.state.currentItem
@@ -37,7 +38,11 @@ class App extends Component {
   }
 
   deleteItem = (key) => {
+    // filter creates new array after removing what you want to
     const filteredItems = this.state.items.filter(item => {
+      // remove item that matches the key we have
+      console.log(`item.key: ${item.key}`);
+      console.log(`key: ${key}`);
       return item.key !== key
     })
 

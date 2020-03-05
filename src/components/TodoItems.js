@@ -10,6 +10,8 @@ class TodoItems extends Component {
     )
   }
   
+  // use 'entries' from App.js...
+  // send array to createTasks function above to create 'listItems'
   render() {
     const todoEntries = this.props.entries
     const listItems = todoEntries.map(this.createTasks)
